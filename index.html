@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Sodas Italianas ¡Refrescante y Delicioso!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        .card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+        }
+        .price-tag {
+            background-color: #ff4757;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 1rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .category-title {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- Header -->
+    <header class="header-bg text-white p-8 text-center rounded-b-3xl shadow-lg">
+        <h1 class="font-pacifico text-5xl md:text-7xl drop-shadow-lg">Sodas Italianas</h1>
+        <p class="text-xl md:text-2xl mt-2 font-semibold">¡Una explosión de sabor en cada sorbo!</p>
+    </header>
+
+    <div class="container mx-auto p-4 md:p-10">
+
+        <!-- Sección Clásicas -->
+        <section class="mb-12">
+            <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #3498db;">Clásicas</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Fresa -->
+                <div class="card p-6 text-center">
+                    <span class="price-tag">$50</span>
+                    <div class="w-24 h-24 mx-auto mb-4">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Cuerpo de la Fresa -->
+                            <path d="M 47.41124258369191,84.27514784672361 C 8.698224880440135,77.20414210545245 15,10 50,25 C 85,10 86.49408277498769,83.49112440220067 47.41124258369191,84.27514784672361 Z" fill="#D92626"/>
+                            <!-- Hojas -->
+                            <path d="M 48.52071004782395,34.87573971305632 C 3.3727808608310315,40.20414210545244 36.65680478479224,22.026627272836254 40,15 C 45,5 55,5 62.5887574163081,16.84911244022007 C 62.97337272716374,25.724852153276387 95.14792918699291,47.2307693782887 48.52071004782395,34.87573971305632 Z" fill="#26A65B"/>
+                            <!-- Semillas -->
+                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(45.00, 40.00) scale(1.2)"/>
+                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(60.00, 45.00) scale(1.2)"/>
+                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(38.00, 55.00) scale(1.2)"/>
+                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(58.70, 69.81) scale(1.2)"/>
+                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(70.00, 60.00) scale(1.2)"/>
+                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(45.00, 78.00) scale(1.2)"/>
+                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(32.22, 66.30) scale(1.2)"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-red-500">Fresa</h3>
+                    <p class="text-sm mt-2">Jarabe de fresa, agua mineral, soda de limón y perlas explosivas de chamoy.</p>
+                </div>
+                <!-- Mango -->
+                <div class="card p-6 text-center">
+                    <span class="price-tag">$50</span>
+                    <div class="w-24 h-24 mx-auto mb-4">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Cuerpo del Mango -->
+                            <path d="M 70,26.10946746413204 C 95,45 69.82248516738382,90.19230765542783 40,85 C 5,75 25,15 70,26.10946746413204 Z" fill="#f97316"/>
+                            <!-- Hoja -->
+                            <path d="M 76.28698229674823,34.985207177188364 C 70.35502966523238,9.822485167383812 45.56213014347184,37.751479426112645 46.124260286943674,15.355029665232376" fill="none" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-yellow-500">Mango</h3>
+                    <p class="text-sm mt-2">Jarabe de mango, agua mineral, soda de limón y perlas explosivas de chamoy.</p>
+                </div>
+                <!-- Piña -->
+                <div class="card p-6 text-center">
+                    <span class="price-tag">$50</span>
+                     <div class="w-24 h-24 mx-auto mb-4">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <pattern id="pineapple-texture" patternUnits="userSpaceOnUse" width="10" height="10">
+                                    <path d="M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2" stroke="#f59e0b" stroke-width="1"/>
+                                </pattern>
+                            </defs>
+                            <!-- Cuerpo de la Piña -->
+                            <path d="M 50,95 C 10.946742260276798,99.18639016479574 26.10946427008135,9.689348058144486 50,35 C 86.76035230929956,9.689348058144486 86.02070733321153,99.92603514088377 50,95 Z" fill="#fcd34d"/>
+                            <path d="M 50,95 C 10.946742260276798,99.18639016479574 26.10946427008135,9.689348058144486 50,35 C 86.76035230929956,9.689348058144486 86.02070733321153,99.92603514088377 50,95 Z" fill="url(#pineapple-texture)"/>
+                            <!-- Corona -->
+                            <path d="M 54.21597336142637,35.94674470926944 C 30,30 20.192304461377134,48.150886814721886 31.286979102697536,23.372780115772983 S 51.99703843316229,35.207099733181416 69.00887288318691,18.565087771200808 C 92.30768962995975,52.21893418320603 62.72189058643868,41.49408202992964 54.21597336142637,35.94674470926944 Z" fill="#16a34a"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-yellow-400">Piña</h3>
+                    <p class="text-sm mt-2">Jarabe de piña, agua mineral, soda de limón y perlas explosivas de chamoy.</p>
+                </div>
+                <!-- Curazao -->
+                <div class="card p-6 text-center">
+                    <span class="price-tag">$50</span>
+                    <div class="w-24 h-24 mx-auto mb-4">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Líquido -->
+                            <path d="M 16.10946746413204,20.17751483261619 Q 50,12 85,19.807692344572175 L 79.83727799019545,43.32840239239612 Q 50,60 20.532544497848566,42.21893492826408 Z" fill="#3b82f6"/>
+                            <!-- Copa -->
+                            <path d="M 10,10 Q 50,5 90,10 L 79.83727799019545,43.32840239239612 Q 50,60 20.532544497848566,42.21893492826408 Z M 50,60 L 50,85 M 30,95 L 70,95" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Adorno -->
+                            <circle cx="88.00" cy="15.00" r="10.00" fill="#f97316" stroke="#fff" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-blue-500">Curazao</h3>
+                    <p class="text-sm mt-2">Jarabe de curazao, agua mineral, soda de limón y perlas explosivas de chamoy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Glitter-Soda -->
+        <section class="mb-12">
+            <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #e84393;">Glitter-Soda</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-pink-500">Brilla-fresa</h3></div>
+                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-orange-400">Mango brillante</h3></div>
+                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-purple-500">Frutos rojos</h3></div>
+                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-yellow-600">Maracuyá</h3></div>
+                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-cyan-400">Curazao</h3></div>
+                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-green-400">Manzana verde</h3></div>
+            </div>
+            <p class="text-center text-sm mt-4 text-gray-500">*Incluyen glitter comestible o son neón. **¡Elige tus perlas explosivas favoritas!</p>
+        </section>
+
+        <!-- Sección Un Sabor Único -->
+        <section class="mb-12">
+            <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #8e44ad;">Un Sabor Único</h2>
+            <p class="text-center text-lg mb-8 -mt-4 text-gray-600">¡Mezclas atrevidas que te encantarán!</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Fresa-Mango</h3><p class="text-xs">con perlas de chamoy</p></div>
+                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Manzana Verde-Curazao</h3><p class="text-xs">con perlas de mango</p></div>
+                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Piña-Mango</h3><p class="text-xs">con perlas de algodón de azúcar</p></div>
+                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Frutos Rojos-Curazao</h3><p class="text-xs">con perlas de manzana verde</p></div>
+                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Piña-Limón</h3><p class="text-xs">con perlas de chamoy</p></div>
+            </div>
+        </section>
+
+        <!-- Sección Extras -->
+        <section>
+            <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #27ae60;">¡Personalízala!</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card p-6 text-center border-t-4 border-green-400">
+                    <h3 class="font-bold text-xl">Double Pop!</h3>
+                    <p class="text-sm mt-2">Más perlas explosivas de tu sabor favorito.</p>
+                    <p class="font-bold text-2xl mt-2 text-green-600">$5</p>
+                </div>
+                <div class="card p-6 text-center border-t-4 border-green-400">
+                    <h3 class="font-bold text-xl">Extra Dulce</h3>
+                    <p class="text-sm mt-2">Un shot extra de tu jarabe preferido.</p>
+                    <p class="font-bold text-2xl mt-2 text-green-600">$5</p>
+                </div>
+                <div class="card p-6 text-center border-t-4 border-green-400">
+                    <h3 class="font-bold text-xl">Topping</h3>
+                    <p class="text-sm mt-2">Manguitos enchilados o picafresas.</p>
+                    <p class="font-bold text-2xl mt-2 text-green-600">$5</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
