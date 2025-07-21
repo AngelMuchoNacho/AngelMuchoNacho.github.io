@@ -23,6 +23,9 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .card:hover {
             transform: translateY(-5px);
@@ -69,75 +72,39 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Fresa -->
                 <div class="card p-6 text-center">
-                    <span class="price-tag">$50</span>
-                    <div class="w-24 h-24 mx-auto mb-4">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Cuerpo de la Fresa -->
-                            <path d="M 47.41124258369191,84.27514784672361 C 8.698224880440135,77.20414210545245 15,10 50,25 C 85,10 86.49408277498769,83.49112440220067 47.41124258369191,84.27514784672361 Z" fill="#D92626"/>
-                            <!-- Hojas -->
-                            <path d="M 48.52071004782395,34.87573971305632 C 3.3727808608310315,40.20414210545244 36.65680478479224,22.026627272836254 40,15 C 45,5 55,5 62.5887574163081,16.84911244022007 C 62.97337272716374,25.724852153276387 95.14792918699291,47.2307693782887 48.52071004782395,34.87573971305632 Z" fill="#26A65B"/>
-                            <!-- Semillas -->
-                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(45.00, 40.00) scale(1.2)"/>
-                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(60.00, 45.00) scale(1.2)"/>
-                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(38.00, 55.00) scale(1.2)"/>
-                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(58.70, 69.81) scale(1.2)"/>
-                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(70.00, 60.00) scale(1.2)"/>
-                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(45.00, 78.00) scale(1.2)"/>
-                            <path d="M0,0 C -1,-2 -1,-4 0,-5 C 1,-4 1,-2 0,0 Z" fill="#F2C84B" transform="translate(32.22, 66.30) scale(1.2)"/>
-                        </svg>
+                    <div>
+                        <span class="price-tag">$50</span>
+                        <img src="Logos/1.svg" alt="Icono de Fresa" class="w-24 h-24 mx-auto mb-4">
+                        <h3 class="font-bold text-xl text-red-500">Fresa</h3>
+                        <p class="text-sm mt-2">Jarabe de sabor fresa, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                    <h3 class="font-bold text-xl text-red-500">Fresa</h3>
-                    <p class="text-sm mt-2">Jarabe de fresa, agua mineral, soda de limón y perlas explosivas de chamoy.</p>
                 </div>
                 <!-- Mango -->
                 <div class="card p-6 text-center">
-                    <span class="price-tag">$50</span>
-                    <div class="w-24 h-24 mx-auto mb-4">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Cuerpo del Mango -->
-                            <path d="M 70,26.10946746413204 C 95,45 69.82248516738382,90.19230765542783 40,85 C 5,75 25,15 70,26.10946746413204 Z" fill="#f97316"/>
-                            <!-- Hoja -->
-                            <path d="M 76.28698229674823,34.985207177188364 C 70.35502966523238,9.822485167383812 45.56213014347184,37.751479426112645 46.124260286943674,15.355029665232376" fill="none" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
+                    <div>
+                        <span class="price-tag">$50</span>
+                        <img src="Logos/2.svg" alt="Icono de Mango" class="w-24 h-24 mx-auto mb-4">
+                        <h3 class="font-bold text-xl text-yellow-500">Mango</h3>
+                        <p class="text-sm mt-2">Jarabe de sabor mango, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                    <h3 class="font-bold text-xl text-yellow-500">Mango</h3>
-                    <p class="text-sm mt-2">Jarabe de mango, agua mineral, soda de limón y perlas explosivas de chamoy.</p>
                 </div>
                 <!-- Piña -->
                 <div class="card p-6 text-center">
-                    <span class="price-tag">$50</span>
-                     <div class="w-24 h-24 mx-auto mb-4">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <pattern id="pineapple-texture" patternUnits="userSpaceOnUse" width="10" height="10">
-                                    <path d="M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2" stroke="#f59e0b" stroke-width="1"/>
-                                </pattern>
-                            </defs>
-                            <!-- Cuerpo de la Piña -->
-                            <path d="M 50,95 C 10.946742260276798,99.18639016479574 26.10946427008135,9.689348058144486 50,35 C 86.76035230929956,9.689348058144486 86.02070733321153,99.92603514088377 50,95 Z" fill="#fcd34d"/>
-                            <path d="M 50,95 C 10.946742260276798,99.18639016479574 26.10946427008135,9.689348058144486 50,35 C 86.76035230929956,9.689348058144486 86.02070733321153,99.92603514088377 50,95 Z" fill="url(#pineapple-texture)"/>
-                            <!-- Corona -->
-                            <path d="M 54.21597336142637,35.94674470926944 C 30,30 20.192304461377134,48.150886814721886 31.286979102697536,23.372780115772983 S 51.99703843316229,35.207099733181416 69.00887288318691,18.565087771200808 C 92.30768962995975,52.21893418320603 62.72189058643868,41.49408202992964 54.21597336142637,35.94674470926944 Z" fill="#16a34a"/>
-                        </svg>
+                    <div>
+                        <span class="price-tag">$50</span>
+                        <img src="Logos/3.svg" alt="Icono de Piña" class="w-24 h-24 mx-auto mb-4">
+                        <h3 class="font-bold text-xl text-yellow-400">Piña</h3>
+                        <p class="text-sm mt-2">Jarabe de sabor piña, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                    <h3 class="font-bold text-xl text-yellow-400">Piña</h3>
-                    <p class="text-sm mt-2">Jarabe de piña, agua mineral, soda de limón y perlas explosivas de chamoy.</p>
                 </div>
                 <!-- Curazao -->
                 <div class="card p-6 text-center">
-                    <span class="price-tag">$50</span>
-                    <div class="w-24 h-24 mx-auto mb-4">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Líquido -->
-                            <path d="M 16.10946746413204,20.17751483261619 Q 50,12 85,19.807692344572175 L 79.83727799019545,43.32840239239612 Q 50,60 20.532544497848566,42.21893492826408 Z" fill="#3b82f6"/>
-                            <!-- Copa -->
-                            <path d="M 10,10 Q 50,5 90,10 L 79.83727799019545,43.32840239239612 Q 50,60 20.532544497848566,42.21893492826408 Z M 50,60 L 50,85 M 30,95 L 70,95" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <!-- Adorno -->
-                            <circle cx="88.00" cy="15.00" r="10.00" fill="#f97316" stroke="#fff" stroke-width="1.5"/>
-                        </svg>
+                    <div>
+                        <span class="price-tag">$50</span>
+                        <img src="Logos/4.svg" alt="Icono de Curazao" class="w-24 h-24 mx-auto mb-4">
+                        <h3 class="font-bold text-xl text-blue-500">Curazao</h3>
+                        <p class="text-sm mt-2">Jarabe de sabor curazao, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                    <h3 class="font-bold text-xl text-blue-500">Curazao</h3>
-                    <p class="text-sm mt-2">Jarabe de curazao, agua mineral, soda de limón y perlas explosivas de chamoy.</p>
                 </div>
             </div>
         </section>
@@ -145,27 +112,28 @@
         <!-- Sección Glitter-Soda -->
         <section class="mb-12">
             <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #e84393;">Glitter-Soda</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-pink-500">Brilla-fresa</h3></div>
-                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-orange-400">Mango brillante</h3></div>
-                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-purple-500">Frutos rojos</h3></div>
-                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-yellow-600">Maracuyá</h3></div>
-                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-cyan-400">Curazao</h3></div>
-                <div class="card p-6 text-center"><h3 class="font-bold text-xl text-green-400">Manzana verde</h3></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card p-6 text-center"><div><img src="Logos/5.svg" alt="Icono de Brilla-fresa" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-xl text-pink-500">Brilla-fresa</h3><p class="text-sm mt-2">Jarabe de sabor fresa, agua mineral, soda de limón y perlas explosivas.</p></div></div>
+                <div class="card p-6 text-center"><div><img src="Logos/6.svg" alt="Icono de Mango brillante" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-xl text-orange-400">Mango brillante</h3><p class="text-sm mt-2">Jarabe de sabor mango, agua mineral, soda de limón y perlas explosivas**.</p></div></div>
+                <div class="card p-6 text-center"><div><img src="Logos/7.svg" alt="Icono de Frutos rojos" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-xl text-purple-500">Frutos rojos</h3><p class="text-sm mt-2">Jarabe de sabor frutos rojos, agua mineral, soda de limón y perlas explosivas**.</p></div></div>
+                <div class="card p-6 text-center"><div><img src="Logos/8.svg" alt="Icono de Maracuyá" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-xl text-yellow-600">Maracuyá</h3><p class="text-sm mt-2">Jarabe de sabor maracuyá, agua mineral, soda de limón y perlas explosivas**.</p></div></div>
+                <div class="card p-6 text-center"><div><img src="Logos/9.svg" alt="Icono de Curazao" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-xl text-cyan-400">Curazao</h3><p class="text-sm mt-2">Jarabe de sabor curazao, agua mineral, soda de limón y perlas explosivas**.</p></div></div>
+                <div class="card p-6 text-center"><div><img src="Logos/10.svg" alt="Icono de Manzana verde" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-xl text-green-400">Manzana verde</h3><p class="text-sm mt-2">Jarabe de sabor manzana verde, agua mineral, soda de limón y perlas explosivas**.</p></div></div>
+                <div class="card p-6 text-center"><div><img src="Logos/11.svg" alt="Icono de Limón" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-xl text-lime-500">Limón</h3><p class="text-sm mt-2">Jarabe de sabor limón, agua mineral, soda de limón y perlas explosivas.</p></div></div>
             </div>
-            <p class="text-center text-sm mt-4 text-gray-500">*Incluyen glitter comestible o son neón. **¡Elige tus perlas explosivas favoritas!</p>
+            <p class="text-center text-sm mt-4 text-gray-500">*Incluyen glitter comestible o es neón. **Puedes elegir el sabor de tus perlas explosivas.</p>
         </section>
 
         <!-- Sección Un Sabor Único -->
         <section class="mb-12">
             <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #8e44ad;">Un Sabor Único</h2>
             <p class="text-center text-lg mb-8 -mt-4 text-gray-600">¡Mezclas atrevidas que te encantarán!</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Fresa-Mango</h3><p class="text-xs">con perlas de chamoy</p></div>
-                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Manzana Verde-Curazao</h3><p class="text-xs">con perlas de mango</p></div>
-                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Piña-Mango</h3><p class="text-xs">con perlas de algodón de azúcar</p></div>
-                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Frutos Rojos-Curazao</h3><p class="text-xs">con perlas de manzana verde</p></div>
-                 <div class="card p-4 text-center"><h3 class="font-bold text-lg">Piña-Limón</h3><p class="text-xs">con perlas de chamoy</p></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div class="card p-6 text-center"><div><img src="Logos/12.svg" alt="Icono de Fresa-Mango" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-lg">Fresa-Mango</h3><p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p></div></div>
+                 <div class="card p-6 text-center"><div><img src="Logos/13.svg" alt="Icono de Manzana verde-curazao" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-lg">Manzana Verde-Curazao</h3><p class="text-sm mt-2">Jarabe de sabor, agua mineral, soda de limón y perlas explosivas sabor mango.</p></div></div>
+                 <div class="card p-6 text-center"><div><img src="Logos/14.svg" alt="Icono de Piña-Mango" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-lg">Piña-Mango</h3><p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor algodón de azúcar.</p></div></div>
+                 <div class="card p-6 text-center"><div><img src="Logos/15.svg" alt="Icono de Frutos rojos-curazao" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-lg">Frutos Rojos-Curazao</h3><p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor manzana verde.</p></div></div>
+                 <div class="card p-6 text-center"><div><img src="Logos/16.svg" alt="Icono de Piña-limón" class="w-24 h-24 mx-auto mb-4"><h3 class="font-bold text-lg">Piña-Limón</h3><p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p></div></div>
             </div>
         </section>
 
@@ -174,19 +142,28 @@
             <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #27ae60;">¡Personalízala!</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="card p-6 text-center border-t-4 border-green-400">
-                    <h3 class="font-bold text-xl">Double Pop!</h3>
-                    <p class="text-sm mt-2">Más perlas explosivas de tu sabor favorito.</p>
-                    <p class="font-bold text-2xl mt-2 text-green-600">$5</p>
+                    <div>
+                        <img src="Logos/17.svg" alt="Icono de Double Pop" class="w-24 h-24 mx-auto mb-4">
+                        <h3 class="font-bold text-xl">Double Pop!</h3>
+                        <p class="text-sm mt-2">Agrega más perlas explosivas a tu bebida del sabor que quieras.</p>
+                        <p class="font-bold text-2xl mt-4 text-green-600">$5.00</p>
+                    </div>
                 </div>
                 <div class="card p-6 text-center border-t-4 border-green-400">
-                    <h3 class="font-bold text-xl">Extra Dulce</h3>
-                    <p class="text-sm mt-2">Un shot extra de tu jarabe preferido.</p>
-                    <p class="font-bold text-2xl mt-2 text-green-600">$5</p>
+                    <div>
+                        <img src="Logos/18.svg" alt="Icono de Extra Dulce" class="w-24 h-24 mx-auto mb-4">
+                        <h3 class="font-bold text-xl">Extra Dulce</h3>
+                        <p class="text-sm mt-2">Agrega un shot extra de jarabe.</p>
+                        <p class="font-bold text-2xl mt-4 text-green-600">$5.00</p>
+                    </div>
                 </div>
                 <div class="card p-6 text-center border-t-4 border-green-400">
-                    <h3 class="font-bold text-xl">Topping</h3>
-                    <p class="text-sm mt-2">Manguitos enchilados o picafresas.</p>
-                    <p class="font-bold text-2xl mt-2 text-green-600">$5</p>
+                    <div>
+                        <img src="Logos/19.svg" alt="Icono de Topping" class="w-24 h-24 mx-auto mb-4">
+                        <h3 class="font-bold text-xl">Topping</h3>
+                        <p class="text-sm mt-2">Elige entre manguitos enchilados o picafresas (máx. 3 pzas).</p>
+                        <p class="font-bold text-2xl mt-4 text-green-600">$5.00</p>
+                    </div>
                 </div>
             </div>
         </section>
