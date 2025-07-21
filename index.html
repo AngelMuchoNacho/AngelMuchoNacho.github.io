@@ -62,30 +62,30 @@
             margin-bottom: 1rem; /* mb-4 */
         }
         .icon-container img {
-            transition: transform 0.1s ease-out;
+            transition: transform 0.2s ease-out;
         }
-        /* Joystick Styles */
-        .joystick-area {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: #e5e7eb; /* gray-200 */
-            position: relative;
-            border: 2px solid #d1d5db; /* gray-300 */
-        }
-        .joystick-handle {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background-color: #3b82f6; /* blue-500 */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            cursor: move;
-            border: 2px solid white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
+
+        /* --- ESTILOS DE ICONOS PERSONALIZADOS --- */
+        #icon-1 { transform: translateX(0.00px) translateY(0.00px) scale(2.60) scaleX(1.00) scaleY(1.00); }
+        #icon-2 { transform: translateX(22.29px) translateY(4.00px) scale(2.65) scaleX(1.00) scaleY(1.00); }
+        #icon-3 { transform: translateX(0.00px) translateY(0.00px) scale(3.10) scaleX(1.00) scaleY(1.00); }
+        #icon-4 { transform: translateX(0.00px) translateY(0.00px) scale(1.35) scaleX(1.00) scaleY(1.00); }
+        #icon-5 { transform: translateX(5.71px) translateY(0.00px) scale(1.80) scaleX(1.00) scaleY(1.00); }
+        #icon-6 { transform: translateX(8.57px) translateY(-0.57px) scale(1.20) scaleX(1.00) scaleY(1.00); }
+        #icon-7 { transform: translateX(-3.14px) translateY(-79.92px) scale(3.05) scaleX(1.00) scaleY(0.95); }
+        #icon-8 { transform: translateX(0.00px) translateY(0.00px) scale(1.50) scaleX(1.00) scaleY(1.00); }
+        #icon-9 { transform: translateX(-1.71px) translateY(7.43px) scale(2.30) scaleX(1.00) scaleY(1.00); }
+        #icon-10 { transform: translateX(6.71px) translateY(15.20px) scale(1.55) scaleX(1.00) scaleY(1.05); }
+        #icon-11 { transform: translateX(-9.14px) translateY(5.71px) scale(2.20) scaleX(1.00) scaleY(1.00); }
+        #icon-12 { transform: translateX(0.00px) translateY(0.00px) scale(2.00) scaleX(1.00) scaleY(1.00); }
+        #icon-13 { transform: translateX(4.00px) translateY(16.00px) scale(2.45) scaleX(1.00) scaleY(1.00); }
+        #icon-14 { transform: translateX(0.00px) translateY(0.00px) scale(1.80) scaleX(1.00) scaleY(1.00); }
+        #icon-15 { transform: translateX(3.43px) translateY(10.29px) scale(2.00) scaleX(1.00) scaleY(1.00); }
+        #icon-16 { transform: translateX(4.00px) translateY(6.29px) scale(2.45) scaleX(1.00) scaleY(1.00); }
+        #icon-17 { transform: translateX(2.29px) translateY(4.57px) scale(1.90) scaleX(1.00) scaleY(1.00); }
+        #icon-18 { transform: translateX(-6.08px) translateY(-23.31px) scale(1.30) scaleX(4.30) scaleY(1.80); }
+        #icon-19 { transform: translateX(-6.29px) translateY(5.71px) scale(2.10) scaleX(1.00) scaleY(1.00); }
+
     </style>
 </head>
 <body class="text-gray-700">
@@ -110,19 +110,6 @@
                         <h3 class="font-bold text-xl text-red-500">Fresa</h3>
                         <p class="text-sm mt-2">Jarabe de sabor fresa, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-1">1.00</span></label><input type="range" id="scale-1" data-icon-id="1" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-1">1.00</span></label><input type="range" id="scaleX-1" data-icon-id="1" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-1">1.00</span></label><input type="range" id="scaleY-1" data-icon-id="1" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-1" data-icon-id="1">
-                                <div class="joystick-handle" id="joystick-handle-1"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Mango -->
                 <div class="card p-6 text-center">
@@ -131,19 +118,6 @@
                         <div class="icon-container"><img id="icon-2" src="Logos/2.svg" alt="Icono de Mango" class="w-24 h-24 object-contain"></div>
                         <h3 class="font-bold text-xl text-yellow-500">Mango</h3>
                         <p class="text-sm mt-2">Jarabe de sabor mango, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-2">1.00</span></label><input type="range" id="scale-2" data-icon-id="2" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-2">1.00</span></label><input type="range" id="scaleX-2" data-icon-id="2" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-2">1.00</span></label><input type="range" id="scaleY-2" data-icon-id="2" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-2" data-icon-id="2">
-                                <div class="joystick-handle" id="joystick-handle-2"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
                     </div>
                 </div>
                  <!-- Piña -->
@@ -154,19 +128,6 @@
                         <h3 class="font-bold text-xl text-yellow-400">Piña</h3>
                         <p class="text-sm mt-2">Jarabe de sabor piña, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-3">1.00</span></label><input type="range" id="scale-3" data-icon-id="3" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-3">1.00</span></label><input type="range" id="scaleX-3" data-icon-id="3" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-3">1.00</span></label><input type="range" id="scaleY-3" data-icon-id="3" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-3" data-icon-id="3">
-                                <div class="joystick-handle" id="joystick-handle-3"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Curazao -->
                  <div class="card p-6 text-center">
@@ -175,19 +136,6 @@
                         <div class="icon-container"><img id="icon-4" src="Logos/4.svg" alt="Icono de Curazao" class="w-24 h-24 object-contain"></div>
                         <h3 class="font-bold text-xl text-blue-500">Curazao</h3>
                         <p class="text-sm mt-2">Jarabe de sabor curazao, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-4">1.00</span></label><input type="range" id="scale-4" data-icon-id="4" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-4">1.00</span></label><input type="range" id="scaleX-4" data-icon-id="4" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-4">1.00</span></label><input type="range" id="scaleY-4" data-icon-id="4" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-4" data-icon-id="4">
-                                <div class="joystick-handle" id="joystick-handle-4"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -204,19 +152,6 @@
                         <h3 class="font-bold text-xl text-pink-500">Brilla-fresa</h3>
                         <p class="text-sm mt-2">Jarabe de sabor fresa, agua mineral, soda de limón y perlas explosivas.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-5">1.00</span></label><input type="range" id="scale-5" data-icon-id="5" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-5">1.00</span></label><input type="range" id="scaleX-5" data-icon-id="5" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-5">1.00</span></label><input type="range" id="scaleY-5" data-icon-id="5" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-5" data-icon-id="5">
-                                <div class="joystick-handle" id="joystick-handle-5"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Mango brillante -->
                 <div class="card p-6 text-center">
@@ -224,19 +159,6 @@
                         <div class="icon-container"><img id="icon-6" src="Logos/6.svg" alt="Icono de Mango brillante" class="w-24 h-24 object-contain"></div>
                         <h3 class="font-bold text-xl text-orange-400">Mango brillante</h3>
                         <p class="text-sm mt-2">Jarabe de sabor mango, agua mineral, soda de limón y perlas explosivas**.</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-6">1.00</span></label><input type="range" id="scale-6" data-icon-id="6" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-6">1.00</span></label><input type="range" id="scaleX-6" data-icon-id="6" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-6">1.00</span></label><input type="range" id="scaleY-6" data-icon-id="6" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-6" data-icon-id="6">
-                                <div class="joystick-handle" id="joystick-handle-6"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
                     </div>
                 </div>
                 <!-- Frutos rojos -->
@@ -246,19 +168,6 @@
                         <h3 class="font-bold text-xl text-purple-500">Frutos rojos</h3>
                         <p class="text-sm mt-2">Jarabe de sabor frutos rojos, agua mineral, soda de limón y perlas explosivas**.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-7">1.00</span></label><input type="range" id="scale-7" data-icon-id="7" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-7">1.00</span></label><input type="range" id="scaleX-7" data-icon-id="7" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-7">1.00</span></label><input type="range" id="scaleY-7" data-icon-id="7" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-7" data-icon-id="7">
-                                <div class="joystick-handle" id="joystick-handle-7"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Maracuyá -->
                 <div class="card p-6 text-center">
@@ -266,19 +175,6 @@
                         <div class="icon-container"><img id="icon-8" src="Logos/8.svg" alt="Icono de Maracuyá" class="w-24 h-24 object-contain"></div>
                         <h3 class="font-bold text-xl text-yellow-600">Maracuyá</h3>
                         <p class="text-sm mt-2">Jarabe de sabor maracuyá, agua mineral, soda de limón y perlas explosivas**.</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-8">1.00</span></label><input type="range" id="scale-8" data-icon-id="8" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-8">1.00</span></label><input type="range" id="scaleX-8" data-icon-id="8" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-8">1.00</span></label><input type="range" id="scaleY-8" data-icon-id="8" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-8" data-icon-id="8">
-                                <div class="joystick-handle" id="joystick-handle-8"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
                     </div>
                 </div>
                 <!-- Curazao (Glitter) -->
@@ -288,19 +184,6 @@
                         <h3 class="font-bold text-xl text-cyan-400">Curazao</h3>
                         <p class="text-sm mt-2">Jarabe de sabor curazao, agua mineral, soda de limón y perlas explosivas**.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-9">1.00</span></label><input type="range" id="scale-9" data-icon-id="9" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-9">1.00</span></label><input type="range" id="scaleX-9" data-icon-id="9" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-9">1.00</span></label><input type="range" id="scaleY-9" data-icon-id="9" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-9" data-icon-id="9">
-                                <div class="joystick-handle" id="joystick-handle-9"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Manzana verde -->
                 <div class="card p-6 text-center">
@@ -309,19 +192,6 @@
                         <h3 class="font-bold text-xl text-green-400">Manzana verde</h3>
                         <p class="text-sm mt-2">Jarabe de sabor manzana verde, agua mineral, soda de limón y perlas explosivas**.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-10">1.00</span></label><input type="range" id="scale-10" data-icon-id="10" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-10">1.00</span></label><input type="range" id="scaleX-10" data-icon-id="10" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-10">1.00</span></label><input type="range" id="scaleY-10" data-icon-id="10" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-10" data-icon-id="10">
-                                <div class="joystick-handle" id="joystick-handle-10"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Limón -->
                 <div class="card p-6 text-center">
@@ -329,19 +199,6 @@
                         <div class="icon-container"><img id="icon-11" src="Logos/11.svg" alt="Icono de Limón" class="w-24 h-24 object-contain"></div>
                         <h3 class="font-bold text-xl text-lime-500">Limón</h3>
                         <p class="text-sm mt-2">Jarabe de sabor limón, agua mineral, soda de limón y perlas explosivas.</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-11">1.00</span></label><input type="range" id="scale-11" data-icon-id="11" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-11">1.00</span></label><input type="range" id="scaleX-11" data-icon-id="11" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-11">1.00</span></label><input type="range" id="scaleY-11" data-icon-id="11" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-11" data-icon-id="11">
-                                <div class="joystick-handle" id="joystick-handle-11"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -359,19 +216,6 @@
                         <h3 class="font-bold text-lg">Fresa-Mango</h3>
                         <p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-12">1.00</span></label><input type="range" id="scale-12" data-icon-id="12" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-12">1.00</span></label><input type="range" id="scaleX-12" data-icon-id="12" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-12">1.00</span></label><input type="range" id="scaleY-12" data-icon-id="12" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-12" data-icon-id="12">
-                                <div class="joystick-handle" id="joystick-handle-12"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Manzana Verde-Curazao -->
                  <div class="card p-6 text-center">
@@ -379,19 +223,6 @@
                         <div class="icon-container"><img id="icon-13" src="Logos/13.svg" alt="Icono de Manzana verde-curazao" class="w-24 h-24 object-contain"></div>
                         <h3 class="font-bold text-lg">Manzana Verde-Curazao</h3>
                         <p class="text-sm mt-2">Jarabe de sabor, agua mineral, soda de limón y perlas explosivas sabor mango.</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-13">1.00</span></label><input type="range" id="scale-13" data-icon-id="13" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-13">1.00</span></label><input type="range" id="scaleX-13" data-icon-id="13" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-13">1.00</span></label><input type="range" id="scaleY-13" data-icon-id="13" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-13" data-icon-id="13">
-                                <div class="joystick-handle" id="joystick-handle-13"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
                     </div>
                 </div>
                 <!-- Piña-Mango -->
@@ -401,19 +232,6 @@
                         <h3 class="font-bold text-lg">Piña-Mango</h3>
                         <p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor algodón de azúcar.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-14">1.00</span></label><input type="range" id="scale-14" data-icon-id="14" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-14">1.00</span></label><input type="range" id="scaleX-14" data-icon-id="14" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-14">1.00</span></label><input type="range" id="scaleY-14" data-icon-id="14" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-14" data-icon-id="14">
-                                <div class="joystick-handle" id="joystick-handle-14"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Frutos Rojos-Curazao -->
                  <div class="card p-6 text-center">
@@ -422,19 +240,6 @@
                         <h3 class="font-bold text-lg">Frutos Rojos-Curazao</h3>
                         <p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor manzana verde.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-15">1.00</span></label><input type="range" id="scale-15" data-icon-id="15" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-15">1.00</span></label><input type="range" id="scaleX-15" data-icon-id="15" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-15">1.00</span></label><input type="range" id="scaleY-15" data-icon-id="15" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-15" data-icon-id="15">
-                                <div class="joystick-handle" id="joystick-handle-15"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Piña-Limón -->
                  <div class="card p-6 text-center">
@@ -442,19 +247,6 @@
                         <div class="icon-container"><img id="icon-16" src="Logos/16.svg" alt="Icono de Piña-limón" class="w-24 h-24 object-contain"></div>
                         <h3 class="font-bold text-lg">Piña-Limón</h3>
                         <p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-16">1.00</span></label><input type="range" id="scale-16" data-icon-id="16" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-16">1.00</span></label><input type="range" id="scaleX-16" data-icon-id="16" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-16">1.00</span></label><input type="range" id="scaleY-16" data-icon-id="16" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-16" data-icon-id="16">
-                                <div class="joystick-handle" id="joystick-handle-16"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -472,19 +264,6 @@
                         <p class="text-sm mt-2">Agrega más perlas explosivas a tu bebida del sabor que quieras.</p>
                         <p class="font-bold text-2xl mt-4 text-green-600">$5.00</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-17">1.00</span></label><input type="range" id="scale-17" data-icon-id="17" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-17">1.00</span></label><input type="range" id="scaleX-17" data-icon-id="17" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-17">1.00</span></label><input type="range" id="scaleY-17" data-icon-id="17" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-17" data-icon-id="17">
-                                <div class="joystick-handle" id="joystick-handle-17"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- Extra Dulce -->
                 <div class="card p-6 text-center border-t-4 border-green-400">
@@ -493,19 +272,6 @@
                         <h3 class="font-bold text-xl">Extra Dulce</h3>
                         <p class="text-sm mt-2">Agrega un shot extra de jarabe.</p>
                         <p class="font-bold text-2xl mt-4 text-green-600">$5.00</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-18">1.00</span></label><input type="range" id="scale-18" data-icon-id="18" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-18">1.00</span></label><input type="range" id="scaleX-18" data-icon-id="18" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-18">1.00</span></label><input type="range" id="scaleY-18" data-icon-id="18" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-18" data-icon-id="18">
-                                <div class="joystick-handle" id="joystick-handle-18"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
                     </div>
                 </div>
                 <!-- Topping -->
@@ -516,179 +282,10 @@
                         <p class="text-sm mt-2">Elige entre manguitos enchilados o picafresas (máx. 3 pzas).</p>
                         <p class="font-bold text-2xl mt-4 text-green-600">$5.00</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
-                        <div class="flex-grow space-y-2">
-                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-19">1.00</span></label><input type="range" id="scale-19" data-icon-id="19" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-19">1.00</span></label><input type="range" id="scaleX-19" data-icon-id="19" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-19">1.00</span></label><input type="range" id="scaleY-19" data-icon-id="19" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                        </div>
-                        <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="joystick-area" id="joystick-area-19" data-icon-id="19">
-                                <div class="joystick-handle" id="joystick-handle-19"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Posición</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Sección de Lista de Transformaciones -->
-        <section id="scaling-list" class="mt-16">
-            <h2 class="text-2xl font-bold text-center mb-4">Valores de Transformación de Iconos</h2>
-            <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto">
-                <pre><code id="scaling-code" class="text-sm whitespace-pre-wrap"></code></pre>
-            </div>
-        </section>
-
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const totalIcons = 19;
-            let transformValues = {};
-
-            // Initialize state for all icons
-            for (let i = 1; i <= totalIcons; i++) {
-                transformValues[i] = {
-                    scale: 1,
-                    scaleX: 1,
-                    scaleY: 1,
-                    translateX: 0,
-                    translateY: 0
-                };
-            }
-
-            const scalingCodeElement = document.getElementById('scaling-code');
-
-            function updateTransformList() {
-                let output = '/*-- Valores de Transformación para CSS --*/\n\n';
-                for (let i = 1; i <= totalIcons; i++) {
-                    const t = transformValues[i];
-                    output += `#icon-${i} {\n`;
-                    output += `  transform: translateX(${t.translateX.toFixed(2)}px) translateY(${t.translateY.toFixed(2)}px) scale(${t.scale.toFixed(2)}) scaleX(${t.scaleX.toFixed(2)}) scaleY(${t.scaleY.toFixed(2)});\n`;
-                    output += `}\n\n`;
-                }
-                scalingCodeElement.textContent = output;
-            }
-            
-            function applyTransform(iconId) {
-                const iconElement = document.getElementById(`icon-${iconId}`);
-                if (!iconElement) return;
-                
-                const t = transformValues[iconId];
-                iconElement.style.transform = `translateX(${t.translateX}px) translateY(${t.translateY}px) scale(${t.scale}) scaleX(${t.scaleX}) scaleY(${t.scaleY})`;
-                updateTransformList();
-            }
-
-            // Setup sliders
-            const sliders = document.querySelectorAll('input[type="range"]');
-            sliders.forEach(slider => {
-                const iconId = slider.dataset.iconId;
-                const type = slider.dataset.transformType;
-                const label = document.getElementById(`label-${type}-${iconId}`);
-                
-                slider.addEventListener('input', (event) => {
-                    const value = parseFloat(event.target.value);
-                    transformValues[iconId][type] = value;
-                    if (label) label.textContent = value.toFixed(2);
-                    applyTransform(iconId);
-                });
-            });
-
-            // Setup joysticks
-            const joysticks = document.querySelectorAll('.joystick-area');
-            let activeJoystick = null;
-            let startPos = { x: 0, y: 0 };
-            let startTranslate = { x: 0, y: 0 };
-
-            joysticks.forEach(joystick => {
-                const handle = joystick.querySelector('.joystick-handle');
-                const iconId = joystick.dataset.iconId;
-
-                const startDrag = (e) => {
-                    e.preventDefault();
-                    activeJoystick = iconId;
-                    const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-                    const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
-                    startPos = { x: clientX, y: clientY };
-                    startTranslate = { ...transformValues[activeJoystick] };
-                    
-                    document.addEventListener('mousemove', drag);
-                    document.addEventListener('mouseup', endDrag);
-                    document.addEventListener('touchmove', drag, { passive: false });
-                    document.addEventListener('touchend', endDrag);
-                };
-
-                handle.addEventListener('mousedown', startDrag);
-                handle.addEventListener('touchstart', startDrag, { passive: false });
-            });
-
-            const drag = (e) => {
-                if (!activeJoystick) return;
-                e.preventDefault();
-
-                const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-                const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
-
-                const dx = clientX - startPos.x;
-                const dy = clientY - startPos.y;
-
-                // Max translation based on joystick area size, doubled for X axis
-                const maxTranslateY = 40; // Half of joystick area height
-                const maxTranslateX = 80; // Full width of joystick area
-
-                let newTranslateX = startTranslate.translateX + dx;
-                let newTranslateY = startTranslate.translateY + dy;
-                
-                // Clamp joystick visual handle
-                const joystickArea = document.getElementById(`joystick-area-${activeJoystick}`);
-                const handle = document.getElementById(`joystick-handle-${activeJoystick}`);
-                const rect = joystickArea.getBoundingClientRect();
-                const handleRadius = handle.offsetWidth / 2;
-                const areaRadius = rect.width / 2;
-                
-                let handleX = areaRadius + dx - handleRadius;
-                let handleY = areaRadius + dy - handleRadius;
-
-                const dist = Math.sqrt(dx*dx + dy*dy);
-                if (dist > areaRadius - handleRadius) {
-                    const angle = Math.atan2(dy, dx);
-                    handleX = areaRadius + Math.cos(angle) * (areaRadius - handleRadius) - handleRadius;
-                    handleY = areaRadius + Math.sin(angle) * (areaRadius - handleRadius) - handleRadius;
-                    
-                    // Apply different max translation for each axis
-                    newTranslateX = startTranslate.translateX + Math.cos(angle) * maxTranslateX;
-                    newTranslateY = startTranslate.translateY + Math.sin(angle) * maxTranslateY;
-                }
-                
-                handle.style.left = `${handleX}px`;
-                handle.style.top = `${handleY}px`;
-
-                transformValues[activeJoystick].translateX = newTranslateX;
-                transformValues[activeJoystick].translateY = newTranslateY;
-                
-                applyTransform(activeJoystick);
-            };
-
-            const endDrag = () => {
-                if (!activeJoystick) return;
-                 const handle = document.getElementById(`joystick-handle-${activeJoystick}`);
-                 // Reset handle to center visually
-                 handle.style.left = `50%`;
-                 handle.style.top = `50%`;
-
-                activeJoystick = null;
-                document.removeEventListener('mousemove', drag);
-                document.removeEventListener('mouseup', endDrag);
-                document.removeEventListener('touchmove', drag);
-                document.removeEventListener('touchend', endDrag);
-            };
-
-            // Initial list generation
-            updateTransformList();
-        });
-    </script>
 
 </body>
 </html>
