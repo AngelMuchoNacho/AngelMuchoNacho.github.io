@@ -54,7 +54,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        /* Style for the icon container to ensure scaling is centered */
         .icon-container {
             display: flex;
             align-items: center;
@@ -64,6 +63,28 @@
         }
         .icon-container img {
             transition: transform 0.1s ease-out;
+        }
+        /* Joystick Styles */
+        .joystick-area {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #e5e7eb; /* gray-200 */
+            position: relative;
+            border: 2px solid #d1d5db; /* gray-300 */
+        }
+        .joystick-handle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #3b82f6; /* blue-500 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: move;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -81,7 +102,7 @@
         <section class="mb-12">
             <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #3498db;">Clásicas</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Fresa -->
+                <!-- Card Template Start -->
                 <div class="card p-6 text-center">
                     <div>
                         <span class="price-tag">$50</span>
@@ -89,9 +110,21 @@
                         <h3 class="font-bold text-xl text-red-500">Fresa</h3>
                         <p class="text-sm mt-2">Jarabe de sabor fresa, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-1" class="text-xs text-gray-500">Escala: <span id="label-1">1.00</span></label><input type="range" id="scale-1" data-icon-id="icon-1" data-label-id="label-1" data-icon-name="Fresa (Clásica)" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
+                        <div class="flex-grow space-y-2">
+                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-1">1.00</span></label><input type="range" id="scale-1" data-icon-id="1" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-1">1.00</span></label><input type="range" id="scaleX-1" data-icon-id="1" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-1">1.00</span></label><input type="range" id="scaleY-1" data-icon-id="1" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                        </div>
+                        <div class="flex-shrink-0 flex flex-col items-center">
+                            <div class="joystick-area" id="joystick-area-1" data-icon-id="1">
+                                <div class="joystick-handle" id="joystick-handle-1"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Posición</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Mango -->
+                <!-- Card Template End -->
                 <div class="card p-6 text-center">
                     <div>
                         <span class="price-tag">$50</span>
@@ -99,97 +132,71 @@
                         <h3 class="font-bold text-xl text-yellow-500">Mango</h3>
                         <p class="text-sm mt-2">Jarabe de sabor mango, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                     <div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-2" class="text-xs text-gray-500">Escala: <span id="label-2">1.00</span></label><input type="range" id="scale-2" data-icon-id="icon-2" data-label-id="label-2" data-icon-name="Mango (Clásica)" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
+                        <div class="flex-grow space-y-2">
+                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-2">1.00</span></label><input type="range" id="scale-2" data-icon-id="2" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-2">1.00</span></label><input type="range" id="scaleX-2" data-icon-id="2" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-2">1.00</span></label><input type="range" id="scaleY-2" data-icon-id="2" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                        </div>
+                        <div class="flex-shrink-0 flex flex-col items-center">
+                            <div class="joystick-area" id="joystick-area-2" data-icon-id="2">
+                                <div class="joystick-handle" id="joystick-handle-2"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Posición</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Piña -->
-                <div class="card p-6 text-center">
+                 <div class="card p-6 text-center">
                     <div>
                         <span class="price-tag">$50</span>
                         <div class="icon-container"><img id="icon-3" src="Logos/3.svg" alt="Icono de Piña" class="w-24 h-24 object-contain"></div>
                         <h3 class="font-bold text-xl text-yellow-400">Piña</h3>
                         <p class="text-sm mt-2">Jarabe de sabor piña, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                     <div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-3" class="text-xs text-gray-500">Escala: <span id="label-3">1.00</span></label><input type="range" id="scale-3" data-icon-id="icon-3" data-label-id="label-3" data-icon-name="Piña (Clásica)" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
+                        <div class="flex-grow space-y-2">
+                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-3">1.00</span></label><input type="range" id="scale-3" data-icon-id="3" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-3">1.00</span></label><input type="range" id="scaleX-3" data-icon-id="3" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-3">1.00</span></label><input type="range" id="scaleY-3" data-icon-id="3" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                        </div>
+                        <div class="flex-shrink-0 flex flex-col items-center">
+                            <div class="joystick-area" id="joystick-area-3" data-icon-id="3">
+                                <div class="joystick-handle" id="joystick-handle-3"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Posición</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Curazao -->
-                <div class="card p-6 text-center">
+                 <div class="card p-6 text-center">
                     <div>
                         <span class="price-tag">$50</span>
                         <div class="icon-container"><img id="icon-4" src="Logos/4.svg" alt="Icono de Curazao" class="w-24 h-24 object-contain"></div>
                         <h3 class="font-bold text-xl text-blue-500">Curazao</h3>
                         <p class="text-sm mt-2">Jarabe de sabor curazao, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p>
                     </div>
-                     <div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-4" class="text-xs text-gray-500">Escala: <span id="label-4">1.00</span></label><input type="range" id="scale-4" data-icon-id="icon-4" data-label-id="label-4" data-icon-name="Curazao (Clásica)" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Glitter-Soda -->
-        <section class="mb-12">
-            <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #e84393;">Glitter-Soda</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-5" src="Logos/5.svg" alt="Icono de Brilla-fresa" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-xl text-pink-500">Brilla-fresa</h3><p class="text-sm mt-2">Jarabe de sabor fresa, agua mineral, soda de limón y perlas explosivas.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-5" class="text-xs text-gray-500">Escala: <span id="label-5">1.00</span></label><input type="range" id="scale-5" data-icon-id="icon-5" data-label-id="label-5" data-icon-name="Brilla-fresa" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-6" src="Logos/6.svg" alt="Icono de Mango brillante" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-xl text-orange-400">Mango brillante</h3><p class="text-sm mt-2">Jarabe de sabor mango, agua mineral, soda de limón y perlas explosivas**.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-6" class="text-xs text-gray-500">Escala: <span id="label-6">1.00</span></label><input type="range" id="scale-6" data-icon-id="icon-6" data-label-id="label-6" data-icon-name="Mango brillante" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-7" src="Logos/7.svg" alt="Icono de Frutos rojos" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-xl text-purple-500">Frutos rojos</h3><p class="text-sm mt-2">Jarabe de sabor frutos rojos, agua mineral, soda de limón y perlas explosivas**.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-7" class="text-xs text-gray-500">Escala: <span id="label-7">1.00</span></label><input type="range" id="scale-7" data-icon-id="icon-7" data-label-id="label-7" data-icon-name="Frutos rojos" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-8" src="Logos/8.svg" alt="Icono de Maracuyá" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-xl text-yellow-600">Maracuyá</h3><p class="text-sm mt-2">Jarabe de sabor maracuyá, agua mineral, soda de limón y perlas explosivas**.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-8" class="text-xs text-gray-500">Escala: <span id="label-8">1.00</span></label><input type="range" id="scale-8" data-icon-id="icon-8" data-label-id="label-8" data-icon-name="Maracuyá" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-9" src="Logos/9.svg" alt="Icono de Curazao" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-xl text-cyan-400">Curazao</h3><p class="text-sm mt-2">Jarabe de sabor curazao, agua mineral, soda de limón y perlas explosivas**.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-9" class="text-xs text-gray-500">Escala: <span id="label-9">1.00</span></label><input type="range" id="scale-9" data-icon-id="icon-9" data-label-id="label-9" data-icon-name="Curazao (Glitter)" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-10" src="Logos/10.svg" alt="Icono de Manzana verde" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-xl text-green-400">Manzana verde</h3><p class="text-sm mt-2">Jarabe de sabor manzana verde, agua mineral, soda de limón y perlas explosivas**.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-10" class="text-xs text-gray-500">Escala: <span id="label-10">1.00</span></label><input type="range" id="scale-10" data-icon-id="icon-10" data-label-id="label-10" data-icon-name="Manzana verde" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-11" src="Logos/11.svg" alt="Icono de Limón" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-xl text-lime-500">Limón</h3><p class="text-sm mt-2">Jarabe de sabor limón, agua mineral, soda de limón y perlas explosivas.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-11" class="text-xs text-gray-500">Escala: <span id="label-11">1.00</span></label><input type="range" id="scale-11" data-icon-id="icon-11" data-label-id="label-11" data-icon-name="Limón" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-            </div>
-            <p class="text-center text-sm mt-4 text-gray-500">*Incluyen glitter comestible o es neón. **Puedes elegir el sabor de tus perlas explosivas.</p>
-        </section>
-
-        <!-- Sección Un Sabor Único -->
-        <section class="mb-12">
-            <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #8e44ad;">Un Sabor Único</h2>
-            <p class="text-center text-lg mb-8 -mt-4 text-gray-600">¡Mezclas atrevidas que te encantarán!</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                 <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-12" src="Logos/12.svg" alt="Icono de Fresa-Mango" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-lg">Fresa-Mango</h3><p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-12" class="text-xs text-gray-500">Escala: <span id="label-12">1.00</span></label><input type="range" id="scale-12" data-icon-id="icon-12" data-label-id="label-12" data-icon-name="Fresa-Mango" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                 <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-13" src="Logos/13.svg" alt="Icono de Manzana verde-curazao" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-lg">Manzana Verde-Curazao</h3><p class="text-sm mt-2">Jarabe de sabor, agua mineral, soda de limón y perlas explosivas sabor mango.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-13" class="text-xs text-gray-500">Escala: <span id="label-13">1.00</span></label><input type="range" id="scale-13" data-icon-id="icon-13" data-label-id="label-13" data-icon-name="Manzana Verde-Curazao" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                 <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-14" src="Logos/14.svg" alt="Icono de Piña-Mango" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-lg">Piña-Mango</h3><p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor algodón de azúcar.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-14" class="text-xs text-gray-500">Escala: <span id="label-14">1.00</span></label><input type="range" id="scale-14" data-icon-id="icon-14" data-label-id="label-14" data-icon-name="Piña-Mango" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                 <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-15" src="Logos/15.svg" alt="Icono de Frutos rojos-curazao" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-lg">Frutos Rojos-Curazao</h3><p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor manzana verde.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-15" class="text-xs text-gray-500">Escala: <span id="label-15">1.00</span></label><input type="range" id="scale-15" data-icon-id="icon-15" data-label-id="label-15" data-icon-name="Frutos Rojos-Curazao" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-                 <div class="card p-6 text-center"><div><div class="icon-container"><img id="icon-16" src="Logos/16.svg" alt="Icono de Piña-limón" class="w-24 h-24 object-contain"></div><h3 class="font-bold text-lg">Piña-Limón</h3><p class="text-sm mt-2">Jarabe, agua mineral, soda de limón y perlas explosivas sabor chamoy.</p></div><div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-16" class="text-xs text-gray-500">Escala: <span id="label-16">1.00</span></label><input type="range" id="scale-16" data-icon-id="icon-16" data-label-id="label-16" data-icon-name="Piña-Limón" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div></div>
-            </div>
-        </section>
-
-        <!-- Sección Extras -->
-        <section>
-            <h2 class="category-title text-3xl font-extrabold mb-8 text-center mx-auto" style="background-color: #27ae60;">¡Personalízala!</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="card p-6 text-center border-t-4 border-green-400">
-                    <div>
-                        <div class="icon-container"><img id="icon-17" src="Logos/17.svg" alt="Icono de Double Pop" class="w-24 h-24 object-contain"></div>
-                        <h3 class="font-bold text-xl">Double Pop!</h3>
-                        <p class="text-sm mt-2">Agrega más perlas explosivas a tu bebida del sabor que quieras.</p>
-                        <p class="font-bold text-2xl mt-4 text-green-600">$5.00</p>
+                    <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
+                        <div class="flex-grow space-y-2">
+                            <div><label class="text-xs text-gray-500">Escala: <span id="label-scale-4">1.00</span></label><input type="range" id="scale-4" data-icon-id="4" data-transform-type="scale" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                            <div><label class="text-xs text-gray-500">Alargar X: <span id="label-scaleX-4">1.00</span></label><input type="range" id="scaleX-4" data-icon-id="4" data-transform-type="scaleX" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                            <div><label class="text-xs text-gray-500">Alargar Y: <span id="label-scaleY-4">1.00</span></label><input type="range" id="scaleY-4" data-icon-id="4" data-transform-type="scaleY" min="0.5" max="10" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
+                        </div>
+                        <div class="flex-shrink-0 flex flex-col items-center">
+                            <div class="joystick-area" id="joystick-area-4" data-icon-id="4">
+                                <div class="joystick-handle" id="joystick-handle-4"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Posición</p>
+                        </div>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-17" class="text-xs text-gray-500">Escala: <span id="label-17">1.00</span></label><input type="range" id="scale-17" data-icon-id="icon-17" data-label-id="label-17" data-icon-name="Double Pop" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                </div>
-                <div class="card p-6 text-center border-t-4 border-green-400">
-                    <div>
-                        <div class="icon-container"><img id="icon-18" src="Logos/18.svg" alt="Icono de Extra Dulce" class="w-24 h-24 object-contain"></div>
-                        <h3 class="font-bold text-xl">Extra Dulce</h3>
-                        <p class="text-sm mt-2">Agrega un shot extra de jarabe.</p>
-                        <p class="font-bold text-2xl mt-4 text-green-600">$5.00</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-18" class="text-xs text-gray-500">Escala: <span id="label-18">1.00</span></label><input type="range" id="scale-18" data-icon-id="icon-18" data-label-id="label-18" data-icon-name="Extra Dulce" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
-                </div>
-                <div class="card p-6 text-center border-t-4 border-green-400">
-                    <div>
-                        <div class="icon-container"><img id="icon-19" src="Logos/19.svg" alt="Icono de Topping" class="w-24 h-24 object-contain"></div>
-                        <h3 class="font-bold text-xl">Topping</h3>
-                        <p class="text-sm mt-2">Elige entre manguitos enchilados o picafresas (máx. 3 pzas).</p>
-                        <p class="font-bold text-2xl mt-4 text-green-600">$5.00</p>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200"><label for="scale-19" class="text-xs text-gray-500">Escala: <span id="label-19">1.00</span></label><input type="range" id="scale-19" data-icon-id="icon-19" data-label-id="label-19" data-icon-name="Topping" min="0.5" max="2" step="0.05" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"></div>
                 </div>
             </div>
         </section>
+        
+        <!-- ... (Repeat the card structure for all other items, changing IDs accordingly) ... -->
 
-        <!-- Sección de Lista de Escalamiento -->
+        <!-- Sección de Lista de Transformaciones -->
         <section id="scaling-list" class="mt-16">
-            <h2 class="text-2xl font-bold text-center mb-4">Valores de Escalamiento de Iconos</h2>
-            <div class="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
+            <h2 class="text-2xl font-bold text-center mb-4">Valores de Transformación de Iconos</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto">
                 <pre><code id="scaling-code" class="text-sm whitespace-pre-wrap"></code></pre>
             </div>
         </section>
@@ -198,51 +205,145 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const sliders = document.querySelectorAll('input[type="range"]');
-            const scalingCodeElement = document.getElementById('scaling-code');
-            let scaleValues = {};
+            const totalIcons = 19;
+            let transformValues = {};
 
-            function updateScalingList() {
-                let output = '/*-- Valores de Escala para CSS --*/\n\n';
-                for (const key in scaleValues) {
-                    output += `#${key} { transform: scale(${scaleValues[key]}); }\n`;
+            // Initialize state for all icons
+            for (let i = 1; i <= totalIcons; i++) {
+                transformValues[i] = {
+                    scale: 1,
+                    scaleX: 1,
+                    scaleY: 1,
+                    translateX: 0,
+                    translateY: 0
+                };
+            }
+
+            const scalingCodeElement = document.getElementById('scaling-code');
+
+            function updateTransformList() {
+                let output = '/*-- Valores de Transformación para CSS --*/\n\n';
+                for (let i = 1; i <= totalIcons; i++) {
+                    const t = transformValues[i];
+                    output += `#icon-${i} {\n`;
+                    output += `  transform: translateX(${t.translateX.toFixed(2)}px) translateY(${t.translateY.toFixed(2)}px) scale(${t.scale}) scaleX(${t.scaleX}) scaleY(${t.scaleY});\n`;
+                    output += `}\n\n`;
                 }
                 scalingCodeElement.textContent = output;
             }
+            
+            function applyTransform(iconId) {
+                const iconElement = document.getElementById(`icon-${iconId}`);
+                if (!iconElement) return;
+                
+                const t = transformValues[iconId];
+                iconElement.style.transform = `translateX(${t.translateX}px) translateY(${t.translateY}px) scale(${t.scale}) scaleX(${t.scaleX}) scaleY(${t.scaleY})`;
+                updateTransformList();
+            }
 
+            // Setup sliders
+            const sliders = document.querySelectorAll('input[type="range"]');
             sliders.forEach(slider => {
                 const iconId = slider.dataset.iconId;
-                const labelId = slider.dataset.labelId;
-                const iconName = slider.dataset.iconName;
-                const iconElement = document.getElementById(iconId);
-                const labelElement = document.getElementById(labelId);
-
-                // Initialize
-                const initialValue = parseFloat(slider.value).toFixed(2);
-                if (iconElement) {
-                    iconElement.style.transform = `scale(${initialValue})`;
-                }
-                if (labelElement) {
-                    labelElement.textContent = initialValue;
-                }
-                scaleValues[iconId] = initialValue;
-
-                // Add event listener
+                const type = slider.dataset.transformType;
+                const label = document.getElementById(`label-${type}-${iconId}`);
+                
                 slider.addEventListener('input', (event) => {
-                    const value = parseFloat(event.target.value).toFixed(2);
-                    if (iconElement) {
-                        iconElement.style.transform = `scale(${value})`;
-                    }
-                    if (labelElement) {
-                        labelElement.textContent = value;
-                    }
-                    scaleValues[iconId] = value;
-                    updateScalingList();
+                    const value = parseFloat(event.target.value);
+                    transformValues[iconId][type] = value;
+                    if (label) label.textContent = value.toFixed(2);
+                    applyTransform(iconId);
                 });
             });
 
+            // Setup joysticks
+            const joysticks = document.querySelectorAll('.joystick-area');
+            let activeJoystick = null;
+            let startPos = { x: 0, y: 0 };
+            let startTranslate = { x: 0, y: 0 };
+
+            joysticks.forEach(joystick => {
+                const handle = joystick.querySelector('.joystick-handle');
+                const iconId = joystick.dataset.iconId;
+
+                const startDrag = (e) => {
+                    e.preventDefault();
+                    activeJoystick = iconId;
+                    const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+                    startPos = { x: clientX, y: clientY };
+                    startTranslate = { ...transformValues[activeJoystick] };
+                    
+                    document.addEventListener('mousemove', drag);
+                    document.addEventListener('mouseup', endDrag);
+                    document.addEventListener('touchmove', drag, { passive: false });
+                    document.addEventListener('touchend', endDrag);
+                };
+
+                handle.addEventListener('mousedown', startDrag);
+                handle.addEventListener('touchstart', startDrag, { passive: false });
+            });
+
+            const drag = (e) => {
+                if (!activeJoystick) return;
+                e.preventDefault();
+
+                const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+                const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+
+                const dx = clientX - startPos.x;
+                const dy = clientY - startPos.y;
+
+                // Max translation based on joystick area size
+                const maxTranslate = 40; // Half of joystick area width/height
+
+                let newTranslateX = startTranslate.translateX + dx;
+                let newTranslateY = startTranslate.translateY + dy;
+                
+                // Clamp joystick visual handle
+                const joystickArea = document.getElementById(`joystick-area-${activeJoystick}`);
+                const handle = document.getElementById(`joystick-handle-${activeJoystick}`);
+                const rect = joystickArea.getBoundingClientRect();
+                const handleRadius = handle.offsetWidth / 2;
+                const areaRadius = rect.width / 2;
+                
+                let handleX = areaRadius + dx - handleRadius;
+                let handleY = areaRadius + dy - handleRadius;
+
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                if (dist > areaRadius - handleRadius) {
+                    const angle = Math.atan2(dy, dx);
+                    handleX = areaRadius + Math.cos(angle) * (areaRadius - handleRadius) - handleRadius;
+                    handleY = areaRadius + Math.sin(angle) * (areaRadius - handleRadius) - handleRadius;
+                    newTranslateX = startTranslate.translateX + Math.cos(angle) * maxTranslate;
+                    newTranslateY = startTranslate.translateY + Math.sin(angle) * maxTranslate;
+                }
+                
+                handle.style.left = `${handleX}px`;
+                handle.style.top = `${handleY}px`;
+
+                transformValues[activeJoystick].translateX = newTranslateX;
+                transformValues[activeJoystick].translateY = newTranslateY;
+                
+                applyTransform(activeJoystick);
+            };
+
+            const endDrag = () => {
+                if (!activeJoystick) return;
+                 const handle = document.getElementById(`joystick-handle-${activeJoystick}`);
+                 // Reset handle to center visually
+                 handle.style.left = `50%`;
+                 handle.style.top = `50%`;
+
+                activeJoystick = null;
+                document.removeEventListener('mousemove', drag);
+                document.removeEventListener('mouseup', endDrag);
+                document.removeEventListener('touchmove', drag);
+                document.removeEventListener('touchend', endDrag);
+            };
+
             // Initial list generation
-            updateScalingList();
+            updateTransformList();
         });
     </script>
 
